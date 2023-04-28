@@ -1,0 +1,7 @@
+# | Sequence
+1 | init(2) - empty - enqueue(a) - partially full - enqueue(b) - full
+2 | init(2) - empty - enqueue(a) - partially full - dequeue() - empty | expect to dequeue a
+3 | init(1) - empty - enqueue(a) - full - dequeue() - empty | expect to dequeue a
+4 | init(3) - empty - enqueue(a) - partially full - enqueue(b) - partially full - enqueue(c) - full - dequeue() - partially full - enqueue(d) - full - dequeue() - partially full - dequeue() - partially full - dequeue() - empty | expected dequeue element order: a,b,c,d
+5 | init(2) - empty - enqueue(a) - partially full - enqueue(b) - full - enqueue(c) - full - enqueue(d) - full - dequeue() - partially full - dequeue() - empty | expected dequeue element order: c, d
+6 | init(2) - empty - enqueue(a) - partially full -  dequeue() empty - dequeue() - empty | expect runtime exception on second dequeue
